@@ -93,6 +93,11 @@ def _register_builtins() -> None:
     except ImportError:
         pass
     try:
+        from skillopt.envs.human_expressions.adapter import HumanExpressionsAdapter
+        _ENV_REGISTRY["human_expressions"] = HumanExpressionsAdapter
+    except ImportError:
+        pass
+    try:
         from skillopt.envs.sealqa.adapter import SealQAAdapter
         _ENV_REGISTRY["sealqa"] = SealQAAdapter
     except ImportError:

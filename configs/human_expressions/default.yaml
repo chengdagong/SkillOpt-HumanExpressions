@@ -1,0 +1,33 @@
+_base_: ../_base_/default.yaml
+
+model:
+  reasoning_effort: medium
+
+train:
+  train_size: 0
+  batch_size: 2
+  accumulation: 1
+
+gradient:
+  minibatch_size: 2
+  merge_batch_size: 2
+
+optimizer:
+  learning_rate: 2
+
+evaluation:
+  gate_metric: soft
+  sel_env_num: 0
+  test_env_num: 0
+
+env:
+  name: human_expressions
+  skill_init: /Users/chengdagong/.agents/skills/humanizer-zh/SKILL.md
+  split_mode: split_dir
+  split_dir: data/human_expressions_witcher_volume1_chunks
+  data_path: ""
+  split_output_dir: ""
+  exec_timeout: 300
+  workers: 4
+  max_completion_tokens: 16384
+  limit: 0
